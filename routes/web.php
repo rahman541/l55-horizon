@@ -14,7 +14,7 @@ use App\Mail\UserRegistered;
 */
 
 Route::get('/', function () {
-	Mail::to('test@gmail.com')->send(new UserRegistered);
+	Mail::to('test@gmail.com')->queue(new UserRegistered);
     return view('welcome');
 });
 
