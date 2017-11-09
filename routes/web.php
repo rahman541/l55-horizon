@@ -1,5 +1,7 @@
 <?php
 
+use App\Mail\UserRegistered;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +14,7 @@
 */
 
 Route::get('/', function () {
+	Mail::to('test@gmail.com')->send(new UserRegistered);
     return view('welcome');
 });
 
